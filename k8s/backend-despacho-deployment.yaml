@@ -8,13 +8,10 @@ metadata:
   namespace: innovatech
 
 spec:
-
   replicas: 2
-
   selector:
     matchLabels:
       app: backend-despacho
-
   template:
     metadata:
       labels:
@@ -22,21 +19,16 @@ spec:
 
     spec:
       containers:
-
       - name: backend-despacho
-
         # imagen ECR
         image: 694766583274.dkr.ecr.us-east-1.amazonaws.com/backend-despacho:latest
-
         imagePullPolicy: Always
-
         ports:
 
         # puerto spring boot
         - containerPort: 8081
 
         env:
-
         # endpoint rds
         - name: DB_ENDPOINT
           valueFrom:
